@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="./css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="./css/main.css">
+        <script src="./js/jquery1-10-1.js"></script>
+        <script src="./js/bootstrap.min.js"></script>
+        <script src="./js/suggest.js"></script>
+        <script type="text/javascript">
+            window.onload = function() {
+                var field = document.getElementById("keyword-search");
+                var box = document.getElementById("search-container");
+                var suggest = new SuggestCtrl(field, box);
+            }
+        </script>
+    </head>
+    <body>
+     <nav class="navbar navbar-default" role="navigation">
+          <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./index.html">eBay</a>
+            </div>
+
+              <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="container collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li <a href="./keywordSearch.html">Keyword Search</a></li>
+                    <li ><a href="./getItem.html">Get Item</a></li>
+
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+           <br>
+        <br>
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <div class="jumbotron">
+                    <h2 class="text-center">eBay Search Web Site<h2>
+                    <div class="col-lg-6 col-lg-offset-3">
+                        <form class="form-inline" role="form" action="./search" method="GET">
+                        	<select class="form-control" name="numResultsToSkip" >
+                                <option value="0">0</option>
+                                <option value="10">10</option>
+                             </select>
+                            <select class="form-control" name="numResultsToReturn" >
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                            </select>
+                        	 <div class="form-group">
+                                <input class="form-control" id="keyword-search" name="q" type="text"/>  
+                            </div>  
+                            <button type="submit" class="btn btn-lg btn-primary">Search</button>
+                            <div id="search-container">
+                            </div>
+                        </form>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
+    	
+    </body>
+</html>

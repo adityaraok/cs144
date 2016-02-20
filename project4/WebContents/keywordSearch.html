@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Keyword Search</title>
+        <link rel="stylesheet" type="text/css" href="./main.css">
+        <script src="./suggest.js"></script>
+        <script type="text/javascript">
+            window.onload = function() {
+                var query = document.getElementById("query");
+                var box = document.getElementById("search-results");
+                var suggest = new SuggestCtrl(field, box);
+            }
+        </script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <h2>Search Auctions<h2>
+            <form action="./searchResults" method="GET">
+                <div class="input-container">
+                    <input id="query" name="q" type="text"/>    
+                </div>
+                <input name="numResultsToSkip" type="hidden" value="0" />
+                <input name="numResultsToReturn" type="hidden" value="10" />
+                <button type="submit" >Search</button>
+                <div id="search-results">
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
+
+
+
+
+    
